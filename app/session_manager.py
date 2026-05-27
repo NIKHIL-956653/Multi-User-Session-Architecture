@@ -42,6 +42,15 @@ def get_chat_history(session_id: str) -> list:
         return []
     return session.get("chat_history", [])
 
+def get_existing_session(username: str):
+    session = sessions_collection.find_one(
+        {"username": username},
+        sort=[("created_at", -1)]  # Get most recent session
+    )
+    if session:
+        return session["session_id"]
+    return None
+
 def get_all_sessions() -> list:
     sessions = sessions_collection.find({}, {"session_id": 1, "username": 1, "created_at": 1})
     return list(sessions)
