@@ -27,6 +27,7 @@ Previous chat history loaded automatically!
 - **Ollama (Qwen)** — local LLM fallback
 - **python-dotenv** — environment management
 
+```
 ## Project Structure
 Multi-User-Session-Architecture/
 ├── app/
@@ -37,6 +38,7 @@ Multi-User-Session-Architecture/
 ├── requirements.txt
 ├── .gitignore
 └── .env                    # API keys (not committed)
+```
 
 ## Setup
 
